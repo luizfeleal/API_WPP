@@ -102,7 +102,7 @@ function start (client) {
   });
   socket.on('ready', () => {
       setTimeout(function (){
-          socket.emit('ready', 'https://www.andersonbrandao.com.br/APIWPP/images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
+          socket.emit('ready', './out.png'); //https://www.andersonbrandao.com.br/images/out.png
       }, 3000)
   });
 })
