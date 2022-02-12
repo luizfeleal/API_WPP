@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="h1"></h1>
+        <img id="img1">
+    </div>
+
+    <script>
+        const socket = io('http://localhost:3001')
+        socket.on('connection')
+
+        socket.on('message', (data) => {
+            console.log(data);
+            document.getElementById('h1').innerHTML = data
+            socket.emit('message')
+            if(data = 'CONNECTED') {
+                document.getElementById('img1').style.display = 'none';
+                socket.disconnect(true);
+            }else{
+
+            }
+        })
+
+        socket.on('ready', (data) => {
+            document.getElementById('img1').src = data
+        })
+        socket.emit('message')
+        socket.emit('ready')
+    </script>
+</body>
+</html>

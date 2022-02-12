@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="numero">
+        <button type="button" id="criar">Criar Grupo</button>
+        <img src="./images/out.png" alt="">
+    </div>
+
+    <script>
+        var array = [
+        number1 = '1234',
+        number2 = '457457456'
+        ]
+        document.getElementById('criar').addEventListener('click', function(){
+            const url = 'http://127.0.0.1:3333/send-message';
+
+            var teste = new Object();
+            teste.numberArray1 = new Object();
+            teste.numberArray1 = array;
+            //teste.numberArray1.number2 = '23456';
+
+         
+          
+
+          fetch(url,{
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(teste)
+    })
+
+          .then((res)=>{ if(res.status === 200 || res.status === 201 || res.status === 'ok') {
+            res.json()
+          
+          } else{
+            throw new Error(res.status);
+          }
+          
+        })
+
+          .catch(error=>{//openError()
+            
+            console.log('funcionou o teste');
+          })
+        })
+         
+      /*
+        {
+    "numberArray1":[{
+        "numberArray2": "2121212"
+}, {
+     "numberArray3": "414241312"
+}
+        ]
+}
+      */
+        
+    </script>
+</body>
+</html>

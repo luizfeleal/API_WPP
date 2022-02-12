@@ -1,0 +1,12 @@
+2022/02/10-21:22:20.508 3a90 Reusing MANIFEST C:\Users\USUARIO\OneDrive\Área de Trabalho\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/02/10-21:22:20.509 3a90 Recovering log #7
+2022/02/10-21:22:21.904 3a90 Reusing old log C:\Users\USUARIO\OneDrive\Área de Trabalho\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000007.log 
+2022/02/10-21:29:33.308 3580 Level-0 table #12: started
+2022/02/10-21:29:33.615 3580 Level-0 table #12: 1144126 bytes OK
+2022/02/10-21:29:33.704 3580 Delete type=0 #7
+2022/02/10-21:29:34.257 2c3c Compacting 1@1 + 1@2 files
+2022/02/10-21:29:34.454 2c3c Generated table #13@1: 7555 keys, 335429 bytes
+2022/02/10-21:29:34.455 2c3c Compacted 1@1 + 1@2 files => 335429 bytes
+2022/02/10-21:29:34.478 2c3c compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/02/10-21:29:34.497 2c3c Delete type=2 #9
+2022/02/10-21:29:34.497 2c3c Delete type=2 #12
