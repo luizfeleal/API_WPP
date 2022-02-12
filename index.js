@@ -102,7 +102,7 @@ function start (client) {
   });
   socket.on('ready', () => {
       setTimeout(function (){
-          socket.emit('ready', 'http://localhost:5500/images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
+          socket.emit('ready', '/images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
       }, 3000)
   });
 })
