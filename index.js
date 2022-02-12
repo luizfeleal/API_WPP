@@ -102,7 +102,7 @@ function start (client) {
   });
   socket.on('ready', () => {
       setTimeout(function (){
-          socket.emit('ready', './images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
+          socket.emit('ready', './out.png'); //https://www.andersonbrandao.com.br/images/out.png
       }, 3000)
   });
 })
@@ -150,7 +150,7 @@ function start (client) {
 app.get('/', (request, response) => {
     console.log('servidor foi chamado');
 
-    return response.send('Hello world');
+    return response.send('hello world');
 });
 
 app.get('/users', (request, response)=>{
