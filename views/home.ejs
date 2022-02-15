@@ -12,7 +12,7 @@
 <body>
     <div>
         <h1 id="h1"></h1>
-        <img id="img1" src="../images/out.png">
+        <img id="img1" src="">
     </div>
 
     <script>
@@ -32,7 +32,7 @@
         })
 
         socket.on('ready', (data) => {
-            //document.getElementById('img1').src = data
+            document.getElementById('img1').src = data
         })
         socket.emit('message')
         socket.emit('ready')

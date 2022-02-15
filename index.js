@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const venom = require('venom-bot');
 const app = express();
 const server = require('http').createServer(app);
@@ -16,7 +17,10 @@ app.get('/home', (req, res)=> {
     res.render('home');
 })
 
-app.unsubscribe(express.static(__dirname + '/images'));
+//app.unsubscribe(express.static(__dirname + '/images'));
+var dir = path.join(__dirname, 'public');
+
+app.use(express.static(dir));
 
 var port = process.env.PORT || 3001
 
