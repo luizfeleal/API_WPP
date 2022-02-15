@@ -51,7 +51,7 @@ io.on('connection', (socket)=>{
     var imageBuffer = response;
 
     require('fs').writeFile(
-      './images/out.png',
+      './public/images/out.png',
       imageBuffer['data'],
       'binary',
       function (err) {
@@ -106,7 +106,7 @@ function start (client) {
   });
   socket.on('ready', () => {
     setTimeout(function (){
-          socket.emit('ready', 'https://apiwpp.herokuapp.com/images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
+          socket.emit('ready', './images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
       }, 3000)
   });
 })
