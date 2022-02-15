@@ -158,3 +158,9 @@ app.get('/users', (request, response)=>{
 
     return response.send('Página do usuário');
 })
+
+app.get('/index', (request, response)=>{
+    //console.log('servidor conectado');
+
+    return response.render('index.html');
+})
