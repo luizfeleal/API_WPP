@@ -162,5 +162,5 @@ app.get('/users', (request, response)=>{
 app.get('/index', (request, response)=>{
     //console.log('servidor conectado');
 
-    return response.render('index.html');
+    return response.render('index');
 })
