@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie um grupo</title>
+</head>
+<body>
+    <div>
+        <label for="numero">Adicione um número:</label>
+        <input type="text" id="numero">
+        <button type="button" id="enviaReq" >Criar grupo</button>
+    </div>
+    <img src="./images/out.png" alt="">
+
+    <script>
+       
+        const enviaReq = document.getElementById('enviaReq');
+
+        //var numberArray = [
+        //"5521964183013@c.us"
+        //]
+        var input = {
+            numberArray = [
+                {
+              numberArray1: '5521964159100@c.us',
+              numberArray2: '5521964183013@c.us'
+                }
+            ]
+        }
+        function enviaFetch(){
+
+    const url = 'http://127.0.0.1:3333/send-message';
+
+    //numberArray.push(document.getElementById('numero').value);
+    //button.addEventListener("click", (e)=> {
+        
+          console.log(input);
+
+        
+         
+          const optionsRequisicao = {
+            method: 'POST',
+            body: JSON.stringify(input)
+          }
+
+          fetch(url, optionsRequisicao)
+
+          .then((res)=>{ if(res.status === 200 || res.status === 201 || res.status === 'ok') {
+            res.json()
+          
+     } else{
+            throw new Error(res.status);
+          }
+          
+        })
+
+          .catch(error=>{//openError()
+            
+            //console.log(error.message);
+            console.log('deu erro');
+            
+          })
+          /*
+          .
+          }
+        })
+        */
+        
+  
+        }
+        enviaReq.addEventListener('click', function(){
+            console.log('pegou o click')    
+            enviaFetch()
+        })
+    </script>
+</body>
+</html>
