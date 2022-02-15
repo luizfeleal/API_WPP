@@ -105,7 +105,7 @@ function start (client) {
 }
   });
   socket.on('ready', () => {
-      setTimeout(function (){
+    setTimeout(function (){
           socket.emit('ready', 'https://apiwpp.herokuapp.com/images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
       }, 3000)
   });
