@@ -51,10 +51,11 @@ io.on('connection', (socket)=>{
     var imageBuffer = response;
 
     require('fs').writeFile(
-      './images/out.png',
+      './images/out.png', //./images/out.png
       imageBuffer['data'],
       'binary',
       function (err) {
+        console.log(err);
         if (err != null) {
           console.log(err);
         }
