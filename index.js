@@ -55,7 +55,6 @@ io.on('connection', (socket)=>{
       imageBuffer['data'],
       'binary',
       function (err) {
-        console.log(err);
         if (err != null) {
           console.log(err);
         }
