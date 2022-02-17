@@ -22,7 +22,7 @@ app.get('/home', (req, res)=> {
 //app.unsubscribe(express.static(__dirname + '/images'));
 var dir = path.join(__dirname, 'public');
 
-app.use(express.static(dir);
+app.use(express.static(dir));
 
 //teste para commit
 
