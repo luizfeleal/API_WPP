@@ -24,7 +24,7 @@ var dir = path.join(__dirname, 'public');
 
 app.use(express.static(dir));
 
-//teste para commit
+//teste p/ commit
 
 var port = process.env.PORT || 3001
 
