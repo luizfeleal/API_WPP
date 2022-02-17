@@ -4,12 +4,14 @@ const venom = require('venom-bot');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {cors: {origin: "*"}});
+const axios = require("axios");
 
 /*app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });*/
+
 
 app.set('view engine', 'ejs');
 
@@ -48,7 +50,14 @@ io.on('connection', (socket)=>{
     response.type = matches[1];
     response.data = new Buffer.from(matches[2], 'base64');
 
+    
     var imageBuffer = response;
+    
+    axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
+      console.log(resposta.data);
+    })
+
+    console.log(imageBuffer['data'].toString('base64'));
 
     require('fs').writeFile(
       './images/out.png', //./images/out.png
