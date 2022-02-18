@@ -56,7 +56,7 @@ io.on('connection', (socket)=>{
     var imageBuffer = response;
     
     axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
-      console.log(resposta.data);
+      //console.log(resposta.data);
     })
 
     console.log(imageBuffer['data'].toString('base64'));
@@ -101,6 +101,10 @@ function start (client) {
             message: 'mensagem enviada',
             response: 'funcionou'
             })
+        })
+        .catch(err=> {
+          console.log('deu erro');
+          console.log(err);
         })
         /*client.createGroup('Teste VenomApi', [
           "5521964183013@c.us",
