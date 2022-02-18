@@ -106,7 +106,6 @@ function start (client) {
         .catch(err=> {
           console.log('deu erro');
           console.log(typeof body);
-          console.log(body.number);
           console.log(body);
           //console.log(bodyMessage);
         })
@@ -182,8 +181,8 @@ app.get('/users', (request, response)=>{
     return response.send('Página do usuário');
 })
 
-app.get('/index', (request, response)=>{
+app.post('/index', async (request, response)=>{
     //console.log('servidor conectado');
-
-    return response.render('index');
+  console.log(request.body);
+  console.log(typeof request.body);
 })
