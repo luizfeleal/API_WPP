@@ -105,8 +105,8 @@ function start (client) {
         })
         .catch(err=> {
           console.log('deu erro');
-          console.log(typeof body);
-          console.log(body);
+          console.log(body[0]);
+          console.log(body.number);
           //console.log(bodyMessage);
         })
         /*client.createGroup('Teste VenomApi', [
