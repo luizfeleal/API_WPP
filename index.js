@@ -91,7 +91,8 @@ function start (client) {
       
       
       var number = req.body.number;
-      var bodyMessage = req.body.bodyMessage
+      var bodyMessage = req.body.bodyMessage;
+      var body = req.body;
       //client.addParticipant('Ip1tEmCSALt31cUHQhVic7@g.us', number);
         
 
@@ -104,8 +105,8 @@ function start (client) {
         })
         .catch(err=> {
           console.log('deu erro');
-          console.log(number);
-          console.log(bodyMessage);
+          console.log(body);
+          //console.log(bodyMessage);
         })
         /*client.createGroup('Teste VenomApi', [
           "5521964183013@c.us",
