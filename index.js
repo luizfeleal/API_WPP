@@ -2,9 +2,13 @@ const express = require('express');
 const path = require('path');
 const venom = require('venom-bot');
 const app = express();
-const server = require('http').createServer(app);
-const io = require('socket.io')(server, {cors: {origin: "*"}});
 const axios = require("axios");
+const io = require('socket.io')(server, {cors: {origin: "*"}});
+const server = require('http').createServer(app);
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 /*app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
