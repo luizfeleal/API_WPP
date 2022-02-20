@@ -3,8 +3,8 @@ const path = require('path');
 const venom = require('venom-bot');
 const app = express();
 const axios = require("axios");
-const io = require('socket.io')(server, {cors: {origin: "*"}});
 const server = require('http').createServer(app);
+const io = require('socket.io')(server, {cors: {origin: "*"}});
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
