@@ -35,6 +35,8 @@ server.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 io.on('connection', (socket)=>{
 
@@ -90,8 +92,7 @@ function start (client) {
 
     //app.use(express.urlencoded());
     //app.use(express.json());
-    app.use(bodyParser.urlencoded({extended: false}));
-    app.use(bodyParser.json());
+    
     app.post('/send-message', async (req, res) =>{ //@c.us
       
       
