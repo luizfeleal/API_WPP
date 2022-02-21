@@ -5,7 +5,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {cors: {origin: "*"}});
 const axios = require("axios");
-
+const bodyParser = require('body-parser');
 /*app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -85,8 +85,8 @@ function start (client) {
         console.log('state changed:', state);
     });
 
-    app.use(express.urlencoded());
-    app.use(express.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
     app.post('/send-message', async (req, res) =>{ //@c.us
       
       
