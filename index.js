@@ -101,6 +101,10 @@ function start (client) {
             message: 'mensagem enviada',
             response: 'funcionou'
             })
+            .catch(error=>{
+              console.log(`Esse e o erro: ${error}`);
+              console.log(req.body);
+            })
         })
         /*client.createGroup('Teste VenomApi', [
           "5521964183013@c.us",
