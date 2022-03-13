@@ -1,0 +1,16 @@
+[
+    
+    
+    {
+        "code": "1",
+        "message": "Verifique se a url está correta."
+    },
+    {
+        "code": "2",
+        "message": "Tente novamente mais tarde, caso o problema persista, entre em contato novamente com o sistema."
+    },
+    {
+        "code": "3",
+        "message": "Será enviado um passo a passo, para que você possa finalizar a compra com sucesso"
+    }
+]

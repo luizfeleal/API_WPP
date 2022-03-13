@@ -1,3 +1,12 @@
-2022/02/11-14:51:27.173 494 Reusing MANIFEST C:\Users\USUARIO\OneDrive\Área de Trabalho\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/02/11-14:51:27.173 494 Recovering log #11
-2022/02/11-14:51:28.040 494 Reusing old log C:\Users\USUARIO\OneDrive\Área de Trabalho\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000011.log 
+2022/03/13-16:24:12.012 25c4 Reusing MANIFEST C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/03/13-16:24:12.012 25c4 Recovering log #11
+2022/03/13-16:24:12.047 25c4 Reusing old log C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000011.log 
+2022/03/13-16:24:48.784 1244 Level-0 table #16: started
+2022/03/13-16:24:48.810 1244 Level-0 table #16: 1164739 bytes OK
+2022/03/13-16:24:48.811 1244 Delete type=0 #11
+2022/03/13-16:25:01.211 25c4 Compacting 1@1 + 1@2 files
+2022/03/13-16:25:01.254 25c4 Generated table #17@1: 20938 keys, 914368 bytes
+2022/03/13-16:25:01.255 25c4 Compacted 1@1 + 1@2 files => 914368 bytes
+2022/03/13-16:25:01.255 25c4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/03/13-16:25:01.255 25c4 Delete type=2 #13
+2022/03/13-16:25:01.255 25c4 Delete type=2 #16

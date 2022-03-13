@@ -6,6 +6,8 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server, {cors: {origin: "*"}});
 const axios = require("axios");
 const bodyParser = require('body-parser');
+const rotas = require('./routes/rotas');
+const suportMessage = require('./messages.json')
 /*app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -80,43 +82,125 @@ io.on('connection', (socket)=>{
 
 function start (client) {
     client.onStateChange((state) => {
-      console.log(state);
+      console.log('usuário conectou');
         socket.emit('message', 'status: ' + state);
         console.log('state changed:', state);
-    });
-
-    app.use(bodyParser.urlencoded({extended: true}));
-    app.use(bodyParser.json());
-    app.post('/send-message', async (req, res) =>{ //@c.us
+      });
       
-      
-      var number = req.body.number;
-      var bodyMessage = req.body.bodyMessage
-      //client.addParticipant('Ip1tEmCSALt31cUHQhVic7@g.us', number);
-        
+      app.use(bodyParser.urlencoded({extended: true}));
+      app.use(bodyParser.json());
 
-        client.sendText(number, bodyMessage).then(response=> {
+      const firstSuportMessage = " Por favor, selecione um número: 1 - Não cosigo acessar a página para finalizar compra  2 - Problema com o site  3 - estou em dúvida na hora da compra" 
+
+
+      client.onMessage((msg) => {
+        const user = `${msg.from.replace(/\D/g, '')}@c.us`;
+        if(msg.body === "Olá") {
+          client.sendText(user, firstSuportMessage).then(response=> {
             res.status(200).json({
             status: true,
             message: 'mensagem enviada',
             response: 'funcionou'
             })
+          })
+          .catch(error=>{
+            console.log(JSON.stringify(error));
+          })
+        }
+
+        switch(msg.body) {
+          case "1" :
+            client.sendText(user, suportMessage[0].message);
+            break;
+          case "2":
+            client.sendText(user, suportMessage[1].message);
+            break;
+          case "3":
+            client.sendText(user, suportMessage[2].message);
+            break;
+        }
+      })
+      
+      //Rota para o envio de mensagem
+
+      app.post('/send-message', async (req, res) =>{ //@c.us
+      
+        var number = `${req.body.number}@c.us`;
+        var bodyMessage = req.body.bodyMessage
+        //client.addParticipant('Ip1tEmCSALt31cUHQhVic7@g.us', number);
+          
+    
+          client.sendText(number, bodyMessage).then(response=> {
+              res.status(200).json({
+              status: true,
+              message: 'mensagem enviada',
+              response: 'funcionou'
+              })
+            })
             .catch(error=>{
-              console.log(`Esse e o erro: ${error}`);
+              console.log(JSON.stringify(error));
               console.log(req.body);
             })
+         
+      })
+    
+      // ROTA PARA O ENVIO DE BOTÕES
+    
+      app.post('/send-buttons', async (req, res) =>{ //@c.us
+          
+          
+        const buttons = [
+            {
+              "buttonText": {
+                "displayText": "Muito boa!"
+                }
+              },
+            {
+              "buttonText": {
+                "displayText": "Boa!"
+                }
+              },
+            {
+              "buttonText": {
+                "displayText": "Mediana"
+                }
+              },
+            {
+              "buttonText": {
+                "displayText": "Ruim :("
+                }
+              }
+            ]
+          await client.sendButtons('5521964159100@c.us', 'Como está sendo a sua experiência com a plataforma ?', buttons, ' Dê a sua avaliação.')
+            .then((result) => {
+              console.log('Result: ', result); //return object success
+            })
+            .catch((erro) => {
+              console.error('Error when sending: ', erro); //return object error
+            });
         })
-        /*client.createGroup('Teste VenomApi', [
-          "5521964183013@c.us",
-          number
-        ]).then(res=>{
-          res.status.json({
-              status: true,
-              message: 'mensagem enviada'
+    
+        // ROTA PARA A CRIAÇÃO DE GRUPO
+    
+      app.post('/create-group', async (req, res) =>{ //@c.us
+          
+          
+        var number = req.body.number;
+        var bodyMessage = req.body.bodyMessage
+        //client.addParticipant('Ip1tEmCSALt31cUHQhVic7@g.us', number);
+          
+    
+          client.createGroup('Teste VenomApi', [
+            "5521964183013@c.us",
+            number
+          ]).then(res=>{
+            res.status.json({
+                status: true,
+                message: 'mensagem enviada'
+            })
+            console.log('funcionou');
           })
-          console.log('funcionou');
-        })*/
-    })
+      })
 }
   });
   socket.on('ready', () => {
@@ -168,6 +252,8 @@ app.get('/', (request, response) => {
 
     return response.send('hello world');
 });
+
+
 
 app.get('/users', (request, response)=>{
     console.log('servidor conectado');
