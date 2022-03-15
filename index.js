@@ -20,7 +20,7 @@ const suportMessage = require('./messages.json')
 //app.set('views', path.join(__dirname, 'views'));
 
 app.get('/home', (req, res)=> {
-    res.render(__dirname + '/views/home.ejs'); //'home'
+    res.send(__dirname + '/views/home.ejs'); //'home'
 })
 
 //app.unsubscribe(express.static(__dirname + '/images'));
