@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
 
 app.get('/home', (req, res)=> {
-    res.send(__dirname + '/views/home.ejs'); //'home'
+    res.send('home'); //'home'
 })
 
 //app.unsubscribe(express.static(__dirname + '/images'));
