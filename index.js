@@ -15,7 +15,7 @@ const suportMessage = require('./messages.json')
 });*/
 
 
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 //app.set('views', path.join(__dirname, 'views'));
 
