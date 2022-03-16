@@ -38,13 +38,12 @@ server.listen(port, () => {
 })
 
 
-//io.on('connection', (socket)=>{
+io.on('connection', (socket)=>{
 
-  //console.log('user connected:' + socket.id);
+  console.log('user connected:' + socket.id);
 
-  //socket.on("message", ()=> {
+  socket.on("message", ()=> {
     ////console.log('chegou a mensagem')
-    app.get('/home', (req, res)=> {
       //res.send('home'); //'home'
      
   
@@ -211,13 +210,13 @@ function start (client) {
       })
 }
     })
-  //});
+  });
   /*socket.on('ready', () => {
     setTimeout(function (){
           socket.emit('ready', path.join(__dirname, '/public/images/out.png')); //https://www.andersonbrandao.com.br/images/out.png ./images/out.png
       }, 3000)
   });*/
-//})
+
 
 
 //Rotas
