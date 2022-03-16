@@ -15,9 +15,9 @@ const suportMessage = require('./messages.json')
 });*/
 
 
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
-//app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/public/views'));
 
 app.get('/home', (req, res)=> {
     //res.send('home'); //'home'
