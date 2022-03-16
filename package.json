@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "build": "@vercel/node"
+    "start": "node index.js"
   },
   "dependencies": {
     "axios": "^0.26.0",
