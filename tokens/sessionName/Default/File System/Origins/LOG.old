@@ -1,3 +1,4 @@
-2022/03/13-16:22:21.904 1d70 Reusing MANIFEST C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\File System\Origins/MANIFEST-000001
-2022/03/13-16:22:21.904 1d70 Recovering log #3
-2022/03/13-16:22:21.905 1d70 Reusing old log C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\File System\Origins/000003.log 
+2022/03/16-11:57:23.387 2720 Creating DB C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\File System\Origins since it was missing.
+2022/03/16-11:57:23.392 2720 Reusing MANIFEST C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\File System\Origins/MANIFEST-000001
+2022/03/16-11:57:23.392 2720 Recovering log #3
+2022/03/16-11:57:23.393 2720 Reusing old log C:\Users\felip\Desktop\portfólio\APIWPP\tokens\sessionName\Default\File System\Origins/000003.log 

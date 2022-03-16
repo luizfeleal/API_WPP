@@ -61,14 +61,14 @@ io.on('connection', (socket)=>{
     
     var imageBuffer = response;
     
-    /*axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
+    axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
       console.log(resposta.data);
-    })*/
+    })
 
     //console.log(imageBuffer['data'].toString('base64'));
 
     require('fs').writeFile(
-      './public/images/out.png', //./images/out.png
+      path.join(__dirname, '/public/images/out.png'), //./images/out.png
       imageBuffer['data'],
       'binary',
       function (err) {
@@ -209,7 +209,7 @@ function start (client) {
   });
   socket.on('ready', () => {
     setTimeout(function (){
-          socket.emit('ready', './images/out.png'); //https://www.andersonbrandao.com.br/images/out.png
+          socket.emit('ready', path.join(__dirname, '/public/images/out.png')); //https://www.andersonbrandao.com.br/images/out.png ./images/out.png
       }, 3000)
   });
 })
