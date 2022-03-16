@@ -15,12 +15,13 @@ const suportMessage = require('./messages.json')
 });*/
 
 
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 //app.set('views', path.join(__dirname, 'views'));
 
 app.get('/home', (req, res)=> {
-    res.render(__dirname + '/views/home.ejs'); //'home'
+    //res.send('home'); //'home'
+    res.render('/views/grupowpp')
 })
 
 //app.unsubscribe(express.static(__dirname + '/images'));
