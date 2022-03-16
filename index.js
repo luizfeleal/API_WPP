@@ -42,7 +42,7 @@ io.on('connection', (socket)=>{
 
   console.log('user connected:' + socket.id);
 
-  socket.on("message", ()=> {
+  //socket.on("message", ()=> {
     console.log('chegou a mensagem')
       venom
 .create(
@@ -206,7 +206,7 @@ function start (client) {
           })
       })
 }
-  });
+  //});
   socket.on('ready', () => {
     setTimeout(function (){
           socket.emit('ready', path.join(__dirname, '/public/images/out.png')); //https://www.andersonbrandao.com.br/images/out.png ./images/out.png
