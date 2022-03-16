@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 
 app.get('/home', (req, res)=> {
     //res.send('home'); //'home'
-    res.render('/views/grupowpp')
+    res.render('./grupowpp')
 })
 
 //app.unsubscribe(express.static(__dirname + '/images'));
