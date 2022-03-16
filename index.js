@@ -43,6 +43,7 @@ io.on('connection', (socket)=>{
   console.log('user connected:' + socket.id);
 
   socket.on("message", ()=> {
+    console.log('chegou a mensagem')
       venom
 .create(
   'sessionName',
@@ -65,7 +66,7 @@ io.on('connection', (socket)=>{
     })*/
 
     //console.log(imageBuffer['data'].toString('base64'));
-    
+
     require('fs').writeFile(
       './public/images/out.png', //./images/out.png
       imageBuffer['data'],
