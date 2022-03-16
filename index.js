@@ -67,7 +67,7 @@ io.on('connection', (socket)=>{
     console.log(imageBuffer['data'].toString('base64'));
 
     require('fs').writeFile(
-      './images/out.png', //./images/out.png
+      './public/images/out.png', //./images/out.png
       imageBuffer['data'],
       'binary',
       function (err) {
