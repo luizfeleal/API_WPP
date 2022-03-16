@@ -19,10 +19,10 @@ app.set('view engine', 'ejs');
 
 app.set('views', path.join(__dirname, '/views'));
 
-app.get('/home', (req, res)=> {
+/*app.get('/home', (req, res)=> {
     //res.send('home'); //'home'
     res.render('home')
-})
+})*/
 
 //app.unsubscribe(express.static(__dirname + '/images'));
 var dir = path.join(__dirname, 'public');
@@ -38,12 +38,16 @@ server.listen(port, () => {
 })
 
 
-io.on('connection', (socket)=>{
+//io.on('connection', (socket)=>{
 
-  console.log('user connected:' + socket.id);
+  //console.log('user connected:' + socket.id);
 
   //socket.on("message", ()=> {
-    console.log('chegou a mensagem')
+    ////console.log('chegou a mensagem')
+    app.get('/home', (req, res)=> {
+      //res.send('home'); //'home'
+     
+  
       venom
 .create(
   'sessionName',
@@ -206,13 +210,14 @@ function start (client) {
           })
       })
 }
+    })
   //});
-  socket.on('ready', () => {
+  /*socket.on('ready', () => {
     setTimeout(function (){
           socket.emit('ready', path.join(__dirname, '/public/images/out.png')); //https://www.andersonbrandao.com.br/images/out.png ./images/out.png
       }, 3000)
-  });
-})
+  });*/
+//})
 
 
 //Rotas
