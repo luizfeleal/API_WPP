@@ -60,12 +60,12 @@ io.on('connection', (socket)=>{
     
     var imageBuffer = response;
     
-    axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
+    /*axios.post("https://www.andersonbrandao.com.br/criaImagem.php", {code: imageBuffer['data'].toString('base64')}) .then(function(resposta){
       console.log(resposta.data);
-    })
+    })*/
 
-    console.log(imageBuffer['data'].toString('base64'));
-
+    //console.log(imageBuffer['data'].toString('base64'));
+    
     require('fs').writeFile(
       './public/images/out.png', //./images/out.png
       imageBuffer['data'],
